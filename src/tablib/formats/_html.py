@@ -20,6 +20,11 @@ class HTMLFormat:
         stream = BytesIO()
 
         page = markup.page()
+        page.style("""
+        table, th, td {
+          border: 1px solid black;
+        }
+        """)
         page.table.open()
 
         if dataset.headers is not None:
